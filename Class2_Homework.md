@@ -44,7 +44,7 @@ Anujit Basu
   
   ```>>>   2 4```
 
-This tells me that there are 590 Chicken Burritos ordered in the file.
+ This tells me that there are 590 Chicken Burritos ordered in the file.
 
  ``` cat chipotle.tsv | grep 'Steak Burrito' | cut -f2 | sort | uniq -c```
  
