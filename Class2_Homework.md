@@ -32,4 +32,29 @@ Anujit Basu
 
  ```>>> 4623 chipotle.tsv```
 
+4. To compare the popularity of Chicken Burrito to Steak Burrito, I had to find the number of such burritos in the file. A simple count of the number of lines of each type of Burrito would be misleading as some lines had multiple quantities of each burrito. Therefore, I found the lines with each burrito type, took the quantity column of such lines, sorted the quantity, determined the uniqs and count. Then I manually counted the total numbeof each burrito type.
+
+ ```cat chipotle.tsv | grep 'Chicken Burrito' | cut -f2 | sort | uniq -c```
+ 
+  ```>>> 521 1```
+  
+  ```>>>  28 2```
+  
+  ```>>>   2 3```
+  
+  ```>>>   2 4```
+
+This tells me that there are 590 Chicken Burritos ordered in the file.
+
+ ``` cat chipotle.tsv | grep 'Steak Burrito' | cut -f2 | sort | uniq -c```
+ 
+  ```>>> 352 1```
+  
+  ```>>>  14 2```
+  
+  ```>>>   2 3```
+
+This tells me that there are 386 Steak Burritos ordered in the file.
+
+Therefore **Chicken Burritos** are more popular.
 
