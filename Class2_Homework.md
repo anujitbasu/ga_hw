@@ -66,9 +66,14 @@ Anujit Basu
 
  I found 307 Chicken Burritos with Black Bans vs 108 with Pinto Beans. It appears that **Black Beans** are overwhelmingly popular with Chicken Burritos. Again, i would like to emphasize that this is a count of the quantity, not just the lines.
 
-6. List of all CSV and TSV files in the DAT-10 directory: First, cd to the base of the DAT-10 directory. Then execute the command
+6. List of all CSV and TSV files in the DAT-10 directory: First, ```cd``` to the base of the DAT-10 directory. Then execute the command
 
  ```ls * | grep .[cCtT][sS][vV]$```
 
- This recursively lists files and filters then where there is a match for either ```.csv``` or ```.tsv```. Since I am not sure if the file names are uniformly upper case or lower case, I decided to search both upper and lower cases. The ```$``` at the end indicates a match at the end of the string, which ends up showing files with names ending in (case insensitive) .csv and .tsv. 
+ This recursively lists files and filters then where there is a match for either ```.csv``` or ```.tsv```. Since I am not sure if the file names are uniformly upper case or lower case, I decided to search both upper and lower cases. The ```$``` at the end indicates a match at the end of the string, which ends up showing files with names ending in (case insensitive) ```.csv``` and ```.tsv```. 
 
+7. Occurance of word "dictionary" in Dat-10 directory: First ```cd``` to the base of the Dat-10 directory. Then execute the command
+
+ ```grep -r 'dictionary' | wc -l```
+ 
+ I found 88 lines. Assuming there is only one occurance of the word per line, we can say there are approximately 88 occurances.
