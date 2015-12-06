@@ -70,5 +70,5 @@ Anujit Basu
 
  ```ls * | grep .[cCtT][sS][vV]$```
 
-This recursively lists files and filters then where there is a match for either ```.csv``` or ```.tsv```. Since I am not sure if the file names are uniformly upper case or lower case, I decided to search both upper and lower cases. The ```$``` at the end indicates a match at the end of the string, which ends up showing files with names ending in (case insensitive) .csv and .tsv. 
+ This recursively lists files and filters then where there is a match for either ```.csv``` or ```.tsv```. Since I am not sure if the file names are uniformly upper case or lower case, I decided to search both upper and lower cases. The ```$``` at the end indicates a match at the end of the string, which ends up showing files with names ending in (case insensitive) .csv and .tsv. 
 
