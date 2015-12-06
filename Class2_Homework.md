@@ -58,3 +58,4 @@ This tells me that there are 386 Steak Burritos ordered in the file.
 
 Therefore **Chicken Burritos** are more popular.
 
+5. To detrmine the Black Beans vs Pinto Beans popularity in Chicken Burritos, I used the same methodology above, but applied an additional grep filter for the beans.
