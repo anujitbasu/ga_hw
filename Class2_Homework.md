@@ -59,3 +59,16 @@ This tells me that there are 386 Steak Burritos ordered in the file.
 Therefore **Chicken Burritos** are more popular.
 
 5. To detrmine the Black Beans vs Pinto Beans popularity in Chicken Burritos, I used the same methodology above, but applied an additional grep filter for the beans.
+
+ ```cat chipotle.tsv | grep 'Chicken Burrito' | grep 'Black Beans' | cut -f2 | sort | uniq -c```
+ 
+ ```cat chipotle.tsv | grep 'Chicken Burrito' | grep 'Pinto Beans' | cut -f2 | sort | uniq -c```
+
+I found 307 Chicken Burritos with Black Bans vs 108 with Pinto Beans. It appears that **Black Beans** are overwhelmingly popular with Chicken Burritos. Again, i would like to emphasize that this is a count of the quantity, not just the lines.
+
+6. List of all CSV and TSV files in the DAT-10 directory: First, cd to the base of the DAT-10 directory. Then execute the command
+
+ ```ls * | grep .[cCtT][sS][vV]$```
+
+This recursively lists files and filters then where there is a match for either .csv or .tsv. Since I am not sure if the file names are uniformly upper case or lower case, I decided to earch both upper and lower case. The ```$``` indicates a match at the end of the string, which ends up showing files with names ending in (case insensitive) .csv and .tsv. 
+
