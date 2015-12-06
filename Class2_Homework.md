@@ -105,9 +105,34 @@ Anujit Basu
  View the top 10 lines of the new file: 
  
  ```head chipotle_order_values.tsv```
+ 
  ```1449    95.39```
+ 
  ```759     86.3```
+ 
  ```1454    85.24```
+ 
  ```1559    82.44```
+ 
  ```953     81.14```
+ 
+ The ```order_id``` 1449 has the maximum value ```order_value``` of $95.39. So what's in this order?
+ 
+ ```grep ^1449 chipotle.tsv```
+ 
+ ```1449    2       Chicken Burrito [Fresh Tomato Salsa (Mild), [Black Beans, Rice, Fajita Veggies, Cheese]]        $16.98```
+ 
+ ```1449    2       Steak Burrito   [Fresh Tomato Salsa (Mild), [Black Beans, Rice, Fajita Veggies, Cheese]]        $17.98```
+ 
+ ```1449    2       Veggie Bowl     [Fresh Tomato Salsa (Mild), [Black Beans, Rice, Fajita Veggies, Cheese, Lettuce]]       $16.98```
+ 
+ ```1449    2       Chicken Bowl    [Fresh Tomato Salsa (Mild), [Black Beans, Rice, Fajita Veggies, Cheese]]        $16.98```
+ 
+ ```1449    1       Carnitas Burrito        [Roasted Chili Corn Salsa (Medium), [Black Beans, Lettuce]]     $8.99```
+ 
+ ```1449    1       Carnitas Soft Tacos     [Fresh Tomato Salsa (Mild), [Rice, Cheese, Lettuce]]    $8.99```
+ 
+ ```1449    1       Chicken Soft Tacos      [Tomatillo-Red Chili Salsa (Hot), [Cheese, Sour Cream, Lettuce]]        $8.49```
+ 
+ No Chips and Salsa!! No Guac!! No Drinks!! What kind of a party is this?
  
