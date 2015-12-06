@@ -26,4 +26,10 @@ Anujit Basu
     
 One of the lines is from the header, therefore there are 1834 unique orders. This method eliminates the need to check if all orders are sequentially numbered, and even that there are all numbers.
 
+3. Lines in the file: There are 4623 lines in the file. However, one of the lines is the header. There are 4622 lines of data.
+
+ ```wc -l chipotle.tsv```
+
+ ```>>> 4623 chipotle.tsv```
+
 
