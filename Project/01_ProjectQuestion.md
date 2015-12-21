@@ -1,5 +1,3 @@
-#Project Introduction
-
 ## Predicting Taxi Ride Destinations
 
 Anujit Basu
@@ -42,7 +40,7 @@ The ride data consist of the following attributes (columns):
   * Some of the records have no GPS data at all. These records cannot be used
   * While most of the locations are within the city ofPorto, some of the rides take us well outside the city. These are **outliers**?
   * Some of the rides show a starting or ending location that is wildly off (like in the ocean) and not consistent with other locations in the ride POLYLINE. These locations seem to be **errors**.
-  * A determination / decision will need to be made as to what is an outlier location and what is an erroneous location. How much should outliers be filtered out from the dataset.
+  * A determination / decision will need to be made as to what is an outlier location and what is an erroneous location. How much should outliers be filtered out from the dataset?
   * While the GPS stream location points can be assumed to be chronologically sequential, there is no indication that we can assume them to be reported on a regular and equal periodicity.
  * The typical training data record contains an entire path. One complete path can produce multiple partial trip paths (or trajectories) from the starting point to various points in the location stream. Therefore, one record can translate into multiple training records. But all these records will have the same output, the destination.
  * Many of the records have hundreds of waypoints (in the Polyline), and some even have thousands. It is important to not go overboard with the partial path concept described above.
