@@ -18,7 +18,7 @@ The city of Porto has a taxi system where people can request taxi rides by conta
 
 My project is the first of these two questions. There is actually a follow-up competition on Kaggle addressing the second question (predict ride termination time).
 
-**Data**
+**Data Source**
 
 The Kaggle competition provides data for every taxi ride from every taxi in the Porto system over year. This forms the training dataset and contains upwards of 1.7 million records.
 
@@ -32,7 +32,18 @@ The ride data consist of the following attributes (columns):
   * TAXI_ID : An ID for the taxi.
   * TIMESTAMP : A unix timestamp for the start of the ride.
   * DAY_TYPE : An ID for a weekday vs a weekend vs a holiday
-  * MISSING_DATA : An indnicator to alert that some data might be missing
-  * POLYLINE : A series of [Longitude, Latitude] points signifying the path of the ride. The first point is the start location and the last point is the destination.
+  * MISSING_DATA : An indnicator to alert that the GPS data stream (see POLYLINE below) is missing one (or more) locations.
+  * POLYLINE : A GPS stream of [Longitude, Latitude] points signifying the path of the ride. The first point is the start location and the last point is the destination.
 
+**Data Analysis (So-Far)**
+
+ * All three types of ride originations (CALL_TYPE) are well repersented in the data.
+ * There are many complications / inaccuracies in the GPS POLYLINE data that is not inicated by the MISSING_DATA indicator.
+  * Some of the records have no GPS data at all. These records cannot be used
+  * While most of the locations are within the city ofPorto, some of the rides take us well outside the city. These are **outliers**?
+  * Some of the rides show a starting or ending location that is wildly off (like in the ocean) and not consistent with other locations in the ride POLYLINE. These locations seem to be **errors**.
+  * A determination / decision will need to be made as to what is an outlier location and what is an erroneous location. How much should outliers be filtered out from the dataset.
+  * While the GPS stream location points can be assumed to be chronologically sequential, there is no indication that we can assume them to be reported on a regular and equal periodicity.
+ * The typical training data record contains an entire path. One complete path can produce multiple partial trip paths (or trajectories) from the starting point to various points in the location stream. Therefore, one record can translate into multiple training records. But all these records will have the same output, the destination.
+ * Many of the records have hundreds of waypoints (in the Polyline), and some even have thousands. It is important to not go overboard with the partial path concept described above.
 
